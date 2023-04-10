@@ -6,10 +6,12 @@ import grpc
 import six
 from six.moves import queue
 
-import etcd3.etcdrpc as etcdrpc
-import etcd3.events as events
-import etcd3.exceptions as exceptions
-import etcd3.utils as utils
+from . import (
+    events,
+    etcdrpc,
+    exceptions,
+    utils,
+)
 
 
 _log = logging.getLogger(__name__)

@@ -1,5 +1,4 @@
 PyYAML
-Sphinx
 bumpversion
 coverage
 flake8-import-order
@@ -15,3 +14,15 @@ pifpaf
 tenacity
 grpcio
 grpcio-tools
+
+Sphinx>=6.1.2
+sphinx-copybutton
+sphinx-rtd-theme
+sphinxcontrib-applehelp
+sphinxcontrib-devhelp
+sphinxcontrib-htmlhelp
+sphinxcontrib-jsmath
+sphinxcontrib-qthelp
+sphinxcontrib-serializinghtml
+sphinxcontrib-napoleon
+sphinxcontrib-prettyspecialmethods

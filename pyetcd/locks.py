@@ -2,7 +2,7 @@ import threading
 import time
 import uuid
 
-from etcd3 import events, exceptions
+from . import events, exceptions
 
 
 class Lock(object):

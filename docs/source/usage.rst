@@ -2,29 +2,29 @@
 API Usage
 =========
 
-To use python-etcd3 in a project:
+To use pyetcd in a project:
 
 .. code-block:: python
 
-    import etcd3
+    import pyetcd
 
 and create a client:
 
 .. code-block:: python
 
-    etcd = etcd3.client()
+    etcd = pyetcd.client()
 
 This defaults to localhost, but you can specify the host and port:
 
 .. code-block:: python
 
-    etcd = etcd3.client(host='etcd-host-01', port=2379)
+    etcd = pyetcd.client(host='etcd-host-01', port=2379)
 
 If you would like to specify options for the underlying GRPC connection, you can also pass it as a parameter:
 
 .. code-block:: python
 
-    etcd = etcd3.client(grpc_options={
+    etcd = pyetcd.client(grpc_options={
                             'grpc.http2.true_binary': 1,
                             'grpc.http2.max_pings_without_data': 0,
                         }.items())
@@ -49,20 +49,20 @@ You can check this has been stored correctly by testing with etcdctl:
 API
 ===
 
-.. autoclass:: etcd3.MultiEndpointEtcd3Client
+.. autoclass:: pyetcd.MultiEndpointEtcd3Client
     :members:
 
-.. autoclass:: etcd3.Etcd3Client
+.. autoclass:: pyetcd.Etcd3Client
     :members:
 
-.. autoclass:: etcd3.Endpoint
+.. autoclass:: pyetcd.Endpoint
     :members:
 
-.. autoclass:: etcd3.Member
+.. autoclass:: pyetcd.Member
     :members:
 
-.. autoclass:: etcd3.Lease
+.. autoclass:: pyetcd.Lease
     :members:
 
-.. autoclass:: etcd3.Lock
+.. autoclass:: pyetcd.Lock
     :members:
