@@ -8,14 +8,16 @@ import grpc._channel
 
 from six.moves import queue
 
-import etcd3.etcdrpc as etcdrpc
-import etcd3.exceptions as exceptions
-import etcd3.leases as leases
-import etcd3.locks as locks
-import etcd3.members
-import etcd3.transactions as transactions
-import etcd3.utils as utils
-import etcd3.watch as watch
+from . import (
+    etcdrpc,
+    exceptions,
+    leases,
+    locks,
+    members,
+    transactions,
+    utils,
+    watch,
+)
 
 _EXCEPTIONS_BY_CODE = {
     grpc.StatusCode.INTERNAL: exceptions.InternalServerError,
@@ -449,6 +451,7 @@ class MultiEndpointEtcd3Client(object):
             return None, None
         else:
             kv = range_response.kvs.pop()
+            print(f"YX: {kv.value}")
             return kv.value, KVMetadata(kv, range_response.header)
 
     @_handle_errors

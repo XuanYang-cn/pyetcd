@@ -8,9 +8,9 @@ This repo is based on `python-etcd3`
 ## Basic usage:
 
 ```python
-import etcd3
+import pyetcd
 
-etcd = etcd3.client()
+etcd = pyetcd.client()
 
 etcd.get('foo')
 etcd.put('bar', 'doot')

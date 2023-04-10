@@ -19,17 +19,6 @@ HERE = pathlib.Path(__file__).parent
 
 README = (HERE / 'README.md').read_text()
 
-#  def load_reqs(filename):
-#      with open(filename) as reqs_file:
-#          return [
-#              re.sub('==', '>=', line) for line in reqs_file.readlines()
-#              if not re.match(r'(\s*#|-r)', line)
-#          ]
-#
-#
-#  requirements = load_reqs('requirements/base.txt')
-#  test_requirements = load_reqs('requirements/test.txt')
-
 setuptools.setup(
     name='pyetcd',
     version='0.0.1',
@@ -59,6 +48,4 @@ setuptools.setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
     ],
-    #  test_suite='tests',
-    #  tests_require=test_requirements
 )
