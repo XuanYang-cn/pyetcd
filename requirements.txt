@@ -12,6 +12,7 @@ flake8-docstrings
 mock
 pifpaf
 tenacity
+m2r
 grpcio
 grpcio-tools
 
@@ -24,5 +25,4 @@ sphinxcontrib-htmlhelp
 sphinxcontrib-jsmath
 sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
-sphinxcontrib-napoleon
 sphinxcontrib-prettyspecialmethods

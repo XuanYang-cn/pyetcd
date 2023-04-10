@@ -39,7 +39,7 @@ extensions = [
     'm2r',
     'sphinx.ext.autosummary',
     'sphinxcontrib.prettyspecialmethods',
-    'sphinxcontrib.napoleon'
+    'sphinx.ext.napoleon'
 ]
 
 
