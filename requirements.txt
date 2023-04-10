@@ -1,0 +1,17 @@
+PyYAML
+Sphinx
+bumpversion
+coverage
+flake8-import-order
+flake8
+grpcio-tools
+hypothesis
+pytest
+pytest-cov
+tox
+flake8-docstrings
+mock
+pifpaf
+tenacity
+grpcio
+grpcio-tools
