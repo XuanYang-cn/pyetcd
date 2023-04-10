@@ -20,7 +20,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / 'README.md').read_text()
 
 setuptools.setup(
-    name='pyetcd',
+    name='etcd-sdk-python',
     version='0.0.1',
     setup_requires=['setuptools_scm'],
     use_scm_version={'local_scheme': 'no-local-version', 'version_scheme': 'release-branch-semver'},
@@ -37,7 +37,7 @@ setuptools.setup(
         "grpcio>=1.49.1,<=1.53.0",
         "grpcio-tools>=1.49.1,<=1.53.0",
     ],
-    keywords='pyetcd',
+    keywords='etcd3-sdk-python',
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',

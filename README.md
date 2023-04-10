@@ -5,6 +5,11 @@ Python client for the etcd API v3, supported python >= 3.7
 Many thx to  [python-etcd3](https://github.com/kragniz/python-etcd3), I need a python client for etcd API v3 for python3.11.
 This repo is based on `python-etcd3`
 
+## Install
+```shell
+pip install etcd-sdk-python
+```
+
 ## Basic usage:
 
 ```python
