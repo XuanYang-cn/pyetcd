@@ -2,8 +2,6 @@
 
 Python client for the etcd API v3, supported python >= 3.7
 
-Many thx to  [python-etcd3](https://github.com/kragniz/python-etcd3), I need a python client for etcd API v3 for python3.11.
-This repo is based on `python-etcd3`
 
 ## Install
 ```shell
@@ -80,3 +78,7 @@ watch_id = etcd.add_watch_prefix_callback("/doot/watch/prefix/", watch_callback)
 # cancel watch
 etcd.cancel_watch(watch_id)
 ```
+
+## Credits
+
+Many thx to  [python-etcd3](https://github.com/kragniz/python-etcd3)
