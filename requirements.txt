@@ -13,10 +13,10 @@ flake8-docstrings
 mock
 pifpaf
 tenacity
-m2r
 grpcio
 grpcio-tools
 
+m2r
 Sphinx>=5.3.0
 sphinx-copybutton
 sphinx-rtd-theme

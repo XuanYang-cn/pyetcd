@@ -14,8 +14,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-OUTDIR="etcd3/etcdrpc"
-PROTO_DIR="etcd3/proto"
+OUTDIR="pyetcd/etcdrpc"
+PROTO_DIR="pyetcd/proto"
 
 python -m grpc_tools.protoc -I ${PROTO_DIR} --python_out=${OUTDIR} --pyi_out=${OUTDIR} ${PROTO_DIR}/auth.proto
 python -m grpc_tools.protoc -I ${PROTO_DIR} --python_out=${OUTDIR} --pyi_out=${OUTDIR} ${PROTO_DIR}/kv.proto
