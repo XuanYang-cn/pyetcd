@@ -14,7 +14,7 @@ class Lock(object):
 
     .. code-block:: python
 
-        etcd = etcd3.client()
+        etcd = pyetcd.client()
 
         # create a lock that expires after 20 seconds
         with etcd.lock('toot', ttl=20) as lock:
