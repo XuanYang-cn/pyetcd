@@ -6,7 +6,7 @@ import time
 import grpc
 import grpc._channel
 
-from six.moves import queue
+import queue
 
 from . import (
     etcdrpc,
@@ -437,8 +437,8 @@ class MultiEndpointEtcd3Client(object):
 
         .. code-block:: python
 
-            >>> import etcd3
-            >>> etcd = etcd3.client()
+            >>> import pyetcd
+            >>> etcd = pyetcd.client()
             >>> etcd.get('/thing/key')
             'hello world'
 
@@ -451,7 +451,6 @@ class MultiEndpointEtcd3Client(object):
             return None, None
         else:
             kv = range_response.kvs.pop()
-            print(f"YX: {kv.value}")
             return kv.value, KVMetadata(kv, range_response.header)
 
     @_handle_errors
@@ -568,8 +567,8 @@ class MultiEndpointEtcd3Client(object):
 
         .. code-block:: python
 
-            >>> import etcd3
-            >>> etcd = etcd3.client()
+            >>> import pyetcd
+            >>> etcd = pyetcd.client()
             >>> etcd.put('/thing/key', 'hello world')
 
         :param key: key in etcd to set
@@ -926,7 +925,7 @@ class MultiEndpointEtcd3Client(object):
         """
         Return a list of grpc requests.
 
-        Returns list from an input list of etcd3.transactions.{Put, Get,
+        Returns list from an input list of pyetcd.transactions.{Put, Get,
         Delete, Txn} objects.
         """
         request_ops = []
@@ -1122,11 +1121,11 @@ class MultiEndpointEtcd3Client(object):
         )
 
         member = member_add_response.member
-        return etcd3.members.Member(member.ID,
-                                    member.name,
-                                    member.peerURLs,
-                                    member.clientURLs,
-                                    etcd_client=self)
+        return members.Member(member.ID,
+                              member.name,
+                              member.peerURLs,
+                              member.clientURLs,
+                              etcd_client=self)
 
     @_handle_errors
     def remove_member(self, member_id):
@@ -1178,11 +1177,11 @@ class MultiEndpointEtcd3Client(object):
         )
 
         for member in member_list_response.members:
-            yield etcd3.members.Member(member.ID,
-                                       member.name,
-                                       member.peerURLs,
-                                       member.clientURLs,
-                                       etcd_client=self)
+            yield members.Member(member.ID,
+                                 member.name,
+                                 member.peerURLs,
+                                 member.clientURLs,
+                                 etcd_client=self)
 
     @_handle_errors
     def compact(self, revision, physical=False):

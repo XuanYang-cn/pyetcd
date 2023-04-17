@@ -1,10 +1,9 @@
 import logging
 import threading
+import queue
 
 import grpc
 
-import six
-from six.moves import queue
 
 from . import (
     events,
@@ -17,7 +16,7 @@ from . import (
 _log = logging.getLogger(__name__)
 
 
-class Watch(object):
+class Watch:
 
     def __init__(self, watch_id, iterator=None, etcd_client=None):
         self.watch_id = watch_id
@@ -34,7 +33,7 @@ class Watch(object):
         raise ValueError('Undefined iterator')
 
 
-class Watcher(object):
+class Watcher:
 
     def __init__(self, watchstub, timeout=None, call_credentials=None,
                  metadata=None):
@@ -84,7 +83,7 @@ class Watcher(object):
 
             # Start the callback thread if it is not yet running.
             if not self._callback_thread:
-                thread_name = 'etcd3_watch_%x' % (id(self),)
+                thread_name = 'pyetcd_watch_%x' % (id(self),)
                 self._callback_thread = threading.Thread(name=thread_name,
                                                          target=self._run)
                 self._callback_thread.daemon = True
@@ -156,7 +155,7 @@ class Watcher(object):
                 self._request_queue.put(None)
                 self._request_queue = queue.Queue(maxsize=10)
 
-            for callback in six.itervalues(callbacks):
+            for callback in callbacks.values():
                 _safe_callback(callback, callback_err)
 
     def _handle_response(self, rs):
