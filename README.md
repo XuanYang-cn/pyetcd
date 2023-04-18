@@ -1,12 +1,31 @@
 # pyetcd
 
-Python client for the etcd API v3, supported python >= 3.7
-
+Python client for the etcd API v3, supported python >= 3.7, under active maintenance
 
 ## Install
 ```shell
 pip install etcd-sdk-python
 ```
+## Road maps and TODOs
+
+### Road maps
+|version|release date|target|status|
+|:-----:|:----------:|------|:----:|
+|0.0.1  |Apr 10,2023 |enable >= python3.7|DONE  |
+|0.0.2  |Apr 21,2023 |set up github actions, run pass unittests, set up merging rules, ensure quality|WIP|
+
+
+### TODOs for v0.0.2
+|functions|version|status|
+|---------|:-----:|:----:|
+|add badges|0.0.2|BACKLOG|
+|make ut work|0.0.2|BACKLOG|
+|make tox.ini work|0.0.2|BACKLOG|
+|enable running ut for pull requests|0.0.2|BACKLOG|
+|enable running lint for pull requests|0.0.2|BACKLOG|
+|enable publishing dev packages for merge|0.0.2|BACKLOG|
+|Add mergify to help merging PRs|0.0.2|BACKLOG|
+
 
 ## Basic usage:
 
