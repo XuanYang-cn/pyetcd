@@ -1,5 +1,11 @@
 # pyetcd
 
+[![version](https://img.shields.io/pypi/v/etcd-sdk-python.svg?color=blue)](https://pypi.org/project/etcd-sdk-python/)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/etcd-sdk-python?logo=python&logoColor=blue)](https://pypi.org/project/etcd-sdk-python/)
+[![Downloads](https://pepy.tech/badge/etcd-sdk-python)](https://pepy.tech/project/etcd-sdk-python)
+[![Downloads](https://pepy.tech/badge/etcd-sdk-python/month)](https://pepy.tech/project/etcd-sdk-python/month)
+[![license](https://img.shields.io/hexpm/l/plug.svg?color=green)](https://github.com/xuanyang-cn/pyetcd/blob/main/LICENSE)
+
 Python client for the etcd API v3, supported python >= 3.7, under active maintenance
 
 ## Install
@@ -18,7 +24,7 @@ pip install etcd-sdk-python
 ### TODOs for v0.0.2
 |functions|version|status|
 |---------|:-----:|:----:|
-|add badges|0.0.2|BACKLOG|
+|add badges|0.0.2|DONE|
 |make ut work|0.0.2|BACKLOG|
 |make tox.ini work|0.0.2|BACKLOG|
 |enable running ut for pull requests|0.0.2|BACKLOG|
