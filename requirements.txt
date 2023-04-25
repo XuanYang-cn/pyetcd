@@ -8,6 +8,7 @@ grpcio-tools
 hypothesis
 pytest
 pytest-cov
+pytest-xdist
 tox
 flake8-docstrings
 mock

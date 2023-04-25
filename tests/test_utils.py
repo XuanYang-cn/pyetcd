@@ -1,3 +1,5 @@
+import pyetcd
+
 class TestUtils(object):
     def test_prefix_range_end(self):
         assert pyetcd.utils.prefix_range_end(b'foo') == b'fop'

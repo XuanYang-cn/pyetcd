@@ -1,19 +1,8 @@
-version: '2'
+version: '3.5'
 services:
-  python:
-    build:
-      context: .
-      args:
-        - HTTP_PROXY
-        - http_proxy
-        - HTTPS_PROXY
-        - https_proxy
-    links:
-      - etcd
-    environment:
-      - PYTHON_ETCD_HTTP_URL=http://etcd:2379
   etcd:
+    image: quay.io/coreos/etcd:v3.5.5
     ports:
       - "2379:2379"
-    image: quay.io/coreos/etcd
-    command: etcd --initial-cluster-state new --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://127.0.0.1:2379
+      - "2380:2380"
+    command: etcd -listen-peer-urls=http://127.0.0.1:2380 -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:4001 -initial-advertise-peer-urls=http://127.0.0.1:2380 --initial-cluster default=http://127.0.0.1:2380 --data-dir /etcd
