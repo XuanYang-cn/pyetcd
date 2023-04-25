@@ -7,12 +7,11 @@ import grpc
 from pyetcd import etcdrpc
 
 def etcdctl(*args):
-    endpoint = os.environ.get('PYTHON_ETCD_HTTP_URL')
+    endpoint = os.environ.get('PYTHON_ETCD_HTTP_URL', 'v3.5.5')
     if endpoint:
         args = ['--endpoints', endpoint] + list(args)
     args = ['/tmp/etcd-download-test/etcdctl', '-w', 'json'] + list(args)
     process_output = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    #  print(f"YX: etcdclt write: {process_output}")
     return process_output.stdout.decode('utf-8')
 
 class TestClient:

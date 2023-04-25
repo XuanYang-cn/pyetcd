@@ -4,11 +4,13 @@ import grpc
 from pyetcd import etcdrpc
 
 class TestAlarms:
-    @pytest.fixture
-    def etcd(self):
+    @pytest.fixture(scope="function")
+    def etcd(request):
         etcd = pyetcd.client()
-        yield etcd
         etcd.disarm_alarm()
+
+        yield etcd
+        alarms = etcd.disarm_alarm()
         for m in etcd.members:
             if m.active_alarms:
                 etcd.disarm_alarm(m.id)

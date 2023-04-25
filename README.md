@@ -5,6 +5,7 @@
 [![Downloads](https://pepy.tech/badge/etcd-sdk-python)](https://pepy.tech/project/etcd-sdk-python)
 [![Downloads](https://pepy.tech/badge/etcd-sdk-python/month)](https://pepy.tech/project/etcd-sdk-python/month)
 [![license](https://img.shields.io/hexpm/l/plug.svg?color=green)](https://github.com/xuanyang-cn/pyetcd/blob/main/LICENSE)
+[![Test on pull request](https://github.com/XuanYang-cn/pyetcd/actions/workflows/pull_request.yml/badge.svg)](https://github.com/XuanYang-cn/pyetcd/actions/workflows/pull_request.yml)
 
 Python client for the etcd API v3, supported python >= 3.7, under active maintenance
 
@@ -25,12 +26,17 @@ pip install etcd-sdk-python
 |functions|version|status|
 |---------|:-----:|:----:|
 |add badges|0.0.2|DONE|
-|make ut work|0.0.2|BACKLOG|
-|make tox.ini work|0.0.2|BACKLOG|
-|enable running ut for pull requests|0.0.2|BACKLOG|
+|make ut work|0.0.2|DONE|
+|make tox.ini work|0.0.2|DONE|
+|enable running ut for pull requests|0.0.2|DONE|
 |enable running lint for pull requests|0.0.2|BACKLOG|
 |enable publishing dev packages for merge|0.0.2|BACKLOG|
 |Add mergify to help merging PRs|0.0.2|BACKLOG|
+
+### BACKLOGs
+|functions|status|
+|---------|:----:|
+|Enable parallel ut with -n auto|BACKLOG|
 
 
 ## Basic usage:
