@@ -34,16 +34,10 @@ dependencies    = [
     "grpcio-tools>=1.49.1,<=1.53.0",
 ]
 
-# version = "0.0.1"
-dynamic = ["version"]
+version = "0.0.2"
 
 [project.urls]
 "Homepage"          = "https://github.com/XuanYang-cn/pyetcd"
 "Docs: User Guide"  = "https://pyetcd-docs.readthedocs.io/en/latest/"
 "Source Code"       = "https://github.com/XuanYang-cn/pyetcd"
 # "Discord Server"    = ""
-
-# pyproject.toml
-[tool.setuptools_scm]
-write_to = "pyetcd/__version__.py"
-# version_scheme = "myproject.my_file:myversion_func"
