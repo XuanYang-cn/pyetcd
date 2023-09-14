@@ -33,7 +33,11 @@ dependencies    = [
     "grpcio>=1.49.1,<=1.58.0",
 ]
 
-version = "0.0.3"
+dyname = ["version"]
+
+[tool.setuptools_scm]
+'local_scheme'= 'no-local-version'
+'version_scheme'= 'no-guess-dev'
 
 [project.urls]
 "Homepage"          = "https://github.com/XuanYang-cn/pyetcd"
