@@ -30,8 +30,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies    = [
-    "grpcio>=1.49.1,<=1.56.0",
-    "grpcio-tools>=1.49.1,<=1.56.0",
+    "grpcio>=1.49.1,<=1.58.0",
 ]
 
 version = "0.0.3"
