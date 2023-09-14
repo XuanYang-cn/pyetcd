@@ -33,7 +33,7 @@ dependencies    = [
     "grpcio>=1.49.1,<=1.58.0",
 ]
 
-dyname = ["version"]
+dynamic = ["version"]
 
 [tool.setuptools_scm]
 'local_scheme'= 'no-local-version'
