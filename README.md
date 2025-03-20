@@ -12,26 +12,6 @@ Python client for the etcd API v3, supported python >= 3.7, under active mainten
 ```shell
 pip install etcd-sdk-python
 ```
-## Road maps and TODOs
-
-### Road maps
-|version|release date|target|status|
-|:-----:|:----------:|------|:----:|
-|0.0.1  |Apr 10,2023 |enable >= python3.7|DONE  |
-|0.0.2  |Jun 6,2023 ||DONE|
-|0.0.3  |ND |set up github actions, run pass unittests, set up merging rules, ensure quality|WIP|
-
-
-### TODOs for v0.0.2
-|functions|version|status|
-|---------|:-----:|:----:|
-|make ut work|0.0.2|BACKLOG|
-|make tox.ini work|0.0.2|BACKLOG|
-|enable running ut for pull requests|0.0.2|BACKLOG|
-|enable running lint for pull requests|0.0.2|BACKLOG|
-|enable publishing dev packages for merge|0.0.2|BACKLOG|
-|Add mergify to help merging PRs|0.0.2|BACKLOG|
-
 
 ## Basic usage:
 
@@ -102,6 +82,13 @@ watch_id = etcd.add_watch_prefix_callback("/doot/watch/prefix/", watch_callback)
 
 # cancel watch
 etcd.cancel_watch(watch_id)
+```
+
+## Dev
+1. Generate protos
+
+```shell
+tox -e genproto
 ```
 
 ## Credits

@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class User(_message.Message):
-    __slots__ = ["name", "password", "roles"]
+    __slots__ = ("name", "password", "roles")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     ROLES_FIELD_NUMBER: _ClassVar[int]
@@ -17,9 +17,9 @@ class User(_message.Message):
     def __init__(self, name: _Optional[bytes] = ..., password: _Optional[bytes] = ..., roles: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class Permission(_message.Message):
-    __slots__ = ["permType", "key", "range_end"]
+    __slots__ = ("permType", "key", "range_end")
     class Type(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         READ: _ClassVar[Permission.Type]
         WRITE: _ClassVar[Permission.Type]
         READWRITE: _ClassVar[Permission.Type]
@@ -35,7 +35,7 @@ class Permission(_message.Message):
     def __init__(self, permType: _Optional[_Union[Permission.Type, str]] = ..., key: _Optional[bytes] = ..., range_end: _Optional[bytes] = ...) -> None: ...
 
 class Role(_message.Message):
-    __slots__ = ["name", "keyPermission"]
+    __slots__ = ("name", "keyPermission")
     NAME_FIELD_NUMBER: _ClassVar[int]
     KEYPERMISSION_FIELD_NUMBER: _ClassVar[int]
     name: bytes

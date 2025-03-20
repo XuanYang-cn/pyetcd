@@ -4,7 +4,6 @@ bumpversion
 coverage
 flake8-import-order
 flake8
-grpcio-tools
 hypothesis
 pytest
 pytest-cov
@@ -13,8 +12,8 @@ flake8-docstrings
 mock
 pifpaf
 tenacity
-grpcio
-grpcio-tools
+grpcio==1.66.2
+grpcio-tools==1.66.2
 
 m2r
 Sphinx>=5.3.0
