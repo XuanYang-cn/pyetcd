@@ -30,7 +30,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies    = [
-    "grpcio>=1.66.2,<=1.70.0",
+    "grpcio>=1.66.2,<=2",
 ]
 
 dynamic = ["version"]
@@ -43,3 +43,144 @@ dynamic = ["version"]
 "Homepage"          = "https://github.com/XuanYang-cn/pyetcd"
 "Docs: User Guide"  = "https://pyetcd-docs.readthedocs.io/en/latest/"
 "Source Code"       = "https://github.com/XuanYang-cn/pyetcd"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "PyYAML",
+    "bumpversion",
+    "coverage",
+    "flake8-import-order",
+    "flake8",
+    "flake8-docstrings",
+    "hypothesis",
+    "pytest",
+    "pytest-cov",
+    "mock",
+    "pifpaf",
+    "tenacity",
+    "grpcio-tools==1.66.2",
+    "ruff",
+]
+docs = [
+    "m2r",
+    "Sphinx>=5.3.0",
+    "sphinx-copybutton",
+    "sphinx-rtd-theme",
+    "sphinxcontrib-applehelp",
+    "sphinxcontrib-devhelp",
+    "sphinxcontrib-htmlhelp",
+    "sphinxcontrib-jsmath",
+    "sphinxcontrib-qthelp",
+    "sphinxcontrib-serializinghtml",
+    "sphinxcontrib-prettyspecialmethods",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "build",
+    "PyYAML",
+    "bumpversion",
+    "coverage",
+    "flake8-import-order",
+    "flake8",
+    "flake8-docstrings",
+    "hypothesis",
+    "pytest",
+    "pytest-cov",
+    "mock",
+    "pifpaf",
+    "tenacity",
+    "grpcio-tools==1.66.2",
+    "ruff",
+    "m2r",
+    "Sphinx>=5.3.0",
+    "sphinx-copybutton",
+    "sphinx-rtd-theme",
+    "sphinxcontrib-applehelp",
+    "sphinxcontrib-devhelp",
+    "sphinxcontrib-htmlhelp",
+    "sphinxcontrib-jsmath",
+    "sphinxcontrib-qthelp",
+    "sphinxcontrib-serializinghtml",
+    "sphinxcontrib-prettyspecialmethods",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v -rxXs"
+
+[tool.coverage.run]
+source = ["pyetcd"]
+
+[tool.flake8]
+exclude = [".venv", ".git", ".tox", "dist", "docs", "*lib/python*", "*egg", "build", "pyetcd/etcdrpc/"]
+application-import-names = ["pyetcd"]
+max-complexity = 10
+ignore = ["D1", "W503"]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".tox",
+    ".venv",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "docs",
+    "pyetcd/etcdrpc/",
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Assume Python 3.8
+target-version = "py38"
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by ruff format
+    "W503",  # line break before binary operator
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.mccabe]
+# Flag errors if complexity is too high.
+max-complexity = 10
+
+[tool.ruff.lint.isort]
+known-first-party = ["pyetcd"]

@@ -1,0 +1,5 @@
+[flake8]
+exclude = .venv,.git,.tox,dist,docs,*lib/python*,*egg,build,pyetcd/etcdrpc/
+application-import-names = pyetcd
+max-complexity = 10
+ignore = D1, W503
