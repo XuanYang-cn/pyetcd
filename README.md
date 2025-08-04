@@ -88,7 +88,7 @@ etcd.cancel_watch(watch_id)
 1. Generate protos
 
 ```shell
-tox -e genproto
+make genproto
 ```
 
 ## Credits
